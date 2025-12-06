@@ -91,7 +91,7 @@ h1 {
     background-color: #005959;
 }
 
-/* Moving fishes */
+/* Moving fishes using border triangles */
 .fish {
     position: absolute;
     width: 60px;
@@ -102,25 +102,29 @@ h1 {
     animation: swim linear infinite;
 }
 
-/* Simple triangular fins using nested divs */
-.fish .fin-left, .fish .fin-right {
+/* Tail triangles using clip-path */
+.fish::before {
+    content: '';
     position: absolute;
+    left: -15px;
+    top: 7px;
     width: 0;
     height: 0;
     border-top: 8px solid transparent;
     border-bottom: 8px solid transparent;
+    border-right: 15px solid orange;
 }
 
-.fish .fin-left {
-    border-right: 12px solid orange;
-    left: -12px;
+.fish::after {
+    content: '';
+    position: absolute;
+    right: -15px;
     top: 7px;
-}
-
-.fish .fin-right {
-    border-left: 12px solid orange;
-    right: -12px;
-    top: 7px;
+    width: 0;
+    height: 0;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-left: 15px solid orange;
 }
 
 @keyframes swim {
@@ -133,4 +137,51 @@ h1 {
 .fish2 { top: 280px; animation-duration: 18s; }
 .fish3 { top: 420px; animation-duration: 15s; }
 
-/* Contact number*
+/* Contact number in red */
+.contact {
+    text-align: center;
+    font-size: 18px;
+    color: red;
+    padding: 20px 0;
+    position: relative;
+    z-index: 2;
+}
+</style>
+</head>
+<body>
+<h1>Yadav Ro Sales and Services</h1>
+
+<!-- Water splash -->
+<div class="water-splash splash1"></div>
+<div class="water-splash splash2"></div>
+<div class="water-splash splash3"></div>
+
+<!-- Moving fishes -->
+<div class="fish fish1"></div>
+<div class="fish fish2"></div>
+<div class="fish fish3"></div>
+
+<!-- Products -->
+<div class="products">
+    <div class="product">
+        <img src="images/kent_mineral_water.jpg" alt="Kent Mineral Water">
+        <p>Kent Mineral Water</p>
+    </div>
+    <div class="product">
+        <img src="images/copper_power.jpg" alt="Copper Power">
+        <p>Copper Power</p>
+    </div>
+</div>
+
+<!-- Pay Now -->
+<div class="payment">
+    <button class="pay-button" onclick="window.location.href='upi://pay?pa=7015874559@pthdfc&pn=Yadav+Ro'">Pay Now</button>
+</div>
+
+<!-- Contact number -->
+<div class="contact">
+    Contact: 9992859460
+</div>
+
+</body>
+</html>
