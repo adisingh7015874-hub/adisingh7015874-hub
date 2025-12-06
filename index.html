@@ -1,108 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yadav Ro Sales and Services</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(to bottom, #008080 0%, #ffffff 60%);
-            color: #333;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yadav Ro Sales and Services</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(135deg, #008080 0%, #00b3b3 50%, #ffffff 100%);
+        overflow-x: hidden;
+        color: #333;
+        position: relative;
+    }
 
-        h1 {
-            text-align: center;
-            padding: 20px;
-            background-color: #008080;
-            color: white;
-            margin: 0;
-            font-size: 28px;
-        }
+    /* Water splash animation */
+    .water-splash {
+        position: absolute;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.15);
+        animation: splash 6s infinite;
+    }
 
-        .pay-button {
-            display: block;
-            margin: 20px auto;
-            padding: 15px 40px;
-            font-size: 20px;
-            font-weight: bold;
-            color: white;
-            background-color: #007bff;
-            border: 2px solid #0056b3;
-            border-radius: 12px;
-            cursor: pointer;
-            text-decoration: none;
-            text-align: center;
-        }
+    .splash1 { width: 100px; height: 100px; top: 50px; left: 20%; animation-delay: 0s; }
+    .splash2 { width: 150px; height: 150px; top: 200px; left: 70%; animation-delay: 2s; }
+    .splash3 { width: 80px; height: 80px; top: 400px; left: 40%; animation-delay: 4s; }
 
-        .pay-button:hover {
-            background-color: #0056b3;
-        }
+    @keyframes splash {
+        0% { transform: scale(0) translateY(0); opacity: 0.2; }
+        50% { transform: scale(1.2) translateY(-20px); opacity: 0.4; }
+        100% { transform: scale(0) translateY(0); opacity: 0.2; }
+    }
 
-        .products-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 30px;
-            margin: 40px 20px;
-        }
-
-        .product {
-            background-color: rgba(255, 255, 255, 0.85);
-            padding: 15px;
-            border-radius: 15px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-            width: 250px;
-            text-align: center;
-            min-height: 350px; /* ensures space for product name even if image fails */
-        }
-
-        .product img {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-        }
-
-        .product-name {
-            margin-top: 15px;
-            font-weight: bold;
-            font-size: 18px;
-            color: #000; /* ensure visibility */
-        }
-
-        .water-drops {
-            position: relative;
-            width: 100%;
-            height: 150px;
-            background: url('water-drops.png') repeat-x;
-            background-size: contain;
-        }
-
-        @media(max-width: 600px){
-            .products-container {
-                flex-direction: column;
-                align-items: center;
-            }
-        }
-    </style>
-</head>
-<body>
-    <h1>Yadav Ro Sales and Services</h1>
-
-    <!-- Pay Now Button (UPI ID) -->
-    <a href="upi://pay?pa=rohit.4559@ptyes&pn=Yadav%20Ro&cu=INR" class="pay-button">Pay Now</a>
-
-    <div class="products-container">
-
-        <!-- Product 1 -->
-        <div class="product">
-            <img src="ro12.jpeg" alt="Kent Mineral Water">
-            <div class="product-name">Kent Mineral Water</div>
-        </div>
-
-        <!-- Product 2 -->
-        <div class="product">
-            <img src="copper-power.jpg" alt="Copper Power">
-            <div class="product-name">Copper
+    h1 {
+        text-align: center;
+        padding: 20px;
+        background-color: rgba(0, 128, 128, 0.8);
+        color: white;
+        margin: 0;
+        font-size: 28px;
+        position: relative;
+        z-index: 1;
