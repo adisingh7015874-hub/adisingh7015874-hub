@@ -1,19 +1,40 @@
-<!-- Products -->
-<div class="products">
-    <div class="product">
-        <img src="images/kent_mineral_water.jpg" alt="Kent Mineral Water">
-        <p>Kent Mineral Water</p>
-    </div>
-    <div class="product">
-        <img src="images/copper_power.jpg" alt="Copper Power">
-        <p>Copper Power</p>
-    </div>
-    <div class="product">
-        <img src="images/aqua_plus.jpg" alt="Aqua Plus">
-        <p>Aqua Plus</p>
-    </div>
-    <div class="product">
-        <img src="images/aqua_organica.jpg" alt="Aqua Organica">
-        <p>Aqua Organica</p>
-    </div>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yadav Ro Sales and Services</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #008080 0%, #00b3b3 50%, #ffffff 100%);
+    color: #333;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Water splash animation */
+.water-splash {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.25);
+    animation: splash 6s infinite;
+    z-index: 0;
+}
+
+.splash1 { width: 100px; height: 100px; top: 50px; left: 20%; animation-delay: 0s; }
+.splash2 { width: 150px; height: 150px; top: 200px; left: 70%; animation-delay: 2s; }
+.splash3 { width: 80px; height: 80px; top: 400px; left: 40%; animation-delay: 4s; }
+
+@keyframes splash {
+    0% { transform: scale(0) translateY(0); opacity: 0.2; }
+    50% { transform: scale(1.2) translateY(-20px); opacity: 0.4; }
+    100% { transform: scale(0) translateY(0); opacity: 0.2; }
+}
+
+h1 {
+    text-align: center;
+    padding: 20px;
+    background-color: rgba
