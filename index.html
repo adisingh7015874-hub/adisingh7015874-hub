@@ -91,7 +91,7 @@ h1 {
     background-color: #005959;
 }
 
-/* Simple moving fishes */
+/* Moving fishes */
 .fish {
     position: absolute;
     width: 60px;
@@ -100,6 +100,37 @@ h1 {
     border-radius: 50%;
     z-index: 0;
     animation: swim linear infinite;
+}
+
+/* Fish fins (triangles) */
+.fish .fin-left, .fish .fin-right {
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: 7px;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+}
+
+.fish .fin-left {
+    border-right: 12px solid orange;
+    left: -12px;
+}
+
+.fish .fin-right {
+    border-left: 12px solid orange;
+    right: -12px;
+}
+
+/* Fish eye */
+.fish .eye {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: black;
+    border-radius: 50%;
+    top: 8px;
+    right: 10px;
 }
 
 @keyframes swim {
@@ -131,10 +162,22 @@ h1 {
 <div class="water-splash splash2"></div>
 <div class="water-splash splash3"></div>
 
-<!-- Moving fishes -->
-<div class="fish fish1"></div>
-<div class="fish fish2"></div>
-<div class="fish fish3"></div>
+<!-- Moving fishes with fins and eyes -->
+<div class="fish fish1">
+    <div class="fin-left"></div>
+    <div class="fin-right"></div>
+    <div class="eye"></div>
+</div>
+<div class="fish fish2">
+    <div class="fin-left"></div>
+    <div class="fin-right"></div>
+    <div class="eye"></div>
+</div>
+<div class="fish fish3">
+    <div class="fin-left"></div>
+    <div class="fin-right"></div>
+    <div class="eye"></div>
+</div>
 
 <!-- Products -->
 <div class="products">
