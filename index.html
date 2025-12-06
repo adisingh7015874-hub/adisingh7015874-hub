@@ -9,14 +9,14 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(to bottom, #008080 0%, #ffffff 60%); /* teal to white gradient */
+            background: linear-gradient(to bottom, #008080 0%, #ffffff 60%);
             color: #333;
         }
 
         h1 {
             text-align: center;
             padding: 20px;
-            background-color: #008080; /* top green/teal area */
+            background-color: #008080;
             color: white;
             margin: 0;
             font-size: 28px;
@@ -60,7 +60,7 @@
         }
 
         .product img {
-            width: 100%; /* automatically scales image to fit box */
+            width: 100%;
             height: auto;
             border-radius: 10px;
         }
@@ -71,12 +71,11 @@
             font-size: 18px;
         }
 
-        /* Water drop effect at bottom */
         .water-drops {
             position: relative;
             width: 100%;
             height: 150px;
-            background: url('water-drops.png') repeat-x; /* Replace with your water drop image */
+            background: url('water-drops.png') repeat-x;
             background-size: contain;
         }
 
@@ -91,25 +90,23 @@
 <body>
     <h1>Yadav Ro Sales and Services</h1>
 
-    <!-- Pay Now Button -->
-    <a href="upi://pay?pa=7015874559@pthdfc&pn=Yadav%20Ro&cu=INR" class="pay-button">Pay Now</a>
+    <!-- UPDATED UPI ID -->
+    <a href="upi://pay?pa=7015874559@ptyes&pn=Yadav%20Ro&cu=INR" class="pay-button">Pay Now</a>
 
     <div class="products-container">
-        <!-- Product 1 -->
+
         <div class="product">
             <img src="ro12.jpeg" alt="Kent Mineral Water">
             <div class="product-name">Kent Mineral Water</div>
         </div>
 
-        <!-- Product 2 -->
         <div class="product">
             <img src="copper-power.jpg" alt="Copper Power">
             <div class="product-name">Copper Power</div>
         </div>
+
     </div>
 
-    <!-- Water drops bottom -->
     <div class="water-drops"></div>
 </body>
 </html>
-
