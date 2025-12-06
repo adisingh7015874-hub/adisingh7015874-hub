@@ -1,55 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yadav Ro Sales and Services</title>
     <style>
         body {
             font-family: Arial, sans-serif;
+            text-align: center;
+            background-image: url('water-background.jpg'); /* Replace with your water-themed background image */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: #333;
             margin: 0;
             padding: 0;
-            background: #f2f2f2;
         }
-        header {
-            background: #333;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
+
+        h1 {
+            margin-top: 30px;
+            background-color: rgba(255, 255, 255, 0.7);
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 15px;
         }
-        .container {
-            max-width: 900px;
-            margin: 30px auto;
-            background: #fff;
-            padding: 20px;
-            border-radius: 8px;
-        }
-        .products {
-            display: flex;
-            gap: 30px;
-            flex-wrap: wrap;
-        }
-        .product {
-            background: #f9f9f9;
-            padding: 15px;
-            border-radius: 8px;
-            text-align: center;
-            flex: 1 1 300px;
-        }
-        .product img {
-            width: 250px;
-            height: auto;
-            border-radius: 8px;
-        }
-        button {
-            background: #28a745;
-            padding: 12px 20px;
-            border: none;
-            border-radius: 5px;
+
+        .pay-button {
+            display: inline-block;
+            margin: 15px 0;
+            padding: 12px 25px;
+            font-size: 18px;
+            font-weight: bold;
             color: white;
-            font-size: 16px;
+            background-color: #007bff;
+            border: none;
+            border-radius: 10px;
             cursor: pointer;
-            margin-top: 10px;
+            text-decoration: none;
         }
-        button:hover { background: #218838; }
-        footer {
+
+        .pay-button:hover {
+            background-color: #0056b3;
+        }
+
+        .products-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin: 40px 20px;
+        }
+
+        .product {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 15px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            width: 250px;
+        }
+
+        .product img {
+            width: 100%; /* Image fits the product box */
+            height: auto; /* Keeps aspect ratio */
+            border-radius: 10px;
+        }
+
+        .product-name {
+            margin-top: 15px;
+            font-weight: bold;
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>Yadav Ro Sales and Services</h1>
+
+    <!-- Pay Now Button -->
+    <a href="upi://pay?pa=7015874559@pthdfc&pn=Yadav%20Ro&cu=INR" class="pay-button">Pay Now</a>
+
+    <div class="products-container">
+        <!-- Product 1 -->
+        <div class="product">
+            <img src="kent-mineral-water.jpg" alt="Kent Mineral Water">
+            <div class="product-name">Kent Mineral Water</div>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="product">
+            <img src="copper-power.jpg" alt="Copper Power">
+            <div class="product-name">Copper Power</div>
+        </div>
+    </div>
+</body>
+</html>
