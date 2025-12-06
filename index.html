@@ -1,215 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Yadav Ro Sales and Services</title>
-<style>
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background: linear-gradient(135deg, #008080 0%, #00b3b3 50%, #ffffff 100%);
-    color: #333;
-    position: relative;
-    overflow-x: hidden;
-}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yadav RO Sales and Services</title>
 
-/* Water splash animation */
-.water-splash {
-    position: absolute;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.25);
-    animation: splash 6s infinite;
-    z-index: 0;
-}
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(white, #c9eaff);
+        }
 
-.splash1 { width: 100px; height: 100px; top: 50px; left: 20%; animation-delay: 0s; }
-.splash2 { width: 150px; height: 150px; top: 200px; left: 70%; animation-delay: 2s; }
-.splash3 { width: 80px; height: 80px; top: 400px; left: 40%; animation-delay: 4s; }
+        header {
+            background: #0077cc;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
 
-@keyframes splash {
-    0% { transform: scale(0) translateY(0); opacity: 0.2; }
-    50% { transform: scale(1.2) translateY(-20px); opacity: 0.4; }
-    100% { transform: scale(0) translateY(0); opacity: 0.2; }
-}
+        .products {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
 
-h1 {
-    text-align: center;
-    padding: 20px;
-    background-color: rgba(0, 128, 128, 0.8);
-    color: white;
-    margin: 0;
-    font-size: 28px;
-    position: relative;
-    z-index: 2;
-}
+        .product-card {
+            width: 260px;
+            background: white;
+            margin: 15px;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.15);
+            text-align: center;
+        }
 
-.products {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    padding: 40px 20px;
-    flex-wrap: wrap;
-    position: relative;
-    z-index: 2;
-}
+        .product-card img {
+            width: 100%;
+            border-radius: 10px;
+        }
 
-.product {
-    text-align: center;
-    background: rgba(255, 255, 255, 0.85);
-    padding: 15px;
-    border-radius: 12px;
-    box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
-    max-width: 200px;
-}
+        /* FINS changed: now top + bottom ONLY */
+        .fin {
+            width: 120px;
+            height: 20px;
+            background: #0077cc;
+            margin: 10px auto;
+            border-radius: 50px;
+        }
 
-.product img {
-    width: 100%;
-    border-radius: 8px;
-}
+        .pay-btn {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            padding: 12px;
+            background: #ff6600;
+            color: white;
+            text-align: center;
+            font-size: 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+        }
 
-.payment {
-    text-align: center;
-    padding: 30px 20px;
-    position: relative;
-    z-index: 2;
-}
-
-.pay-button {
-    background-color: #008080;
-    color: white;
-    border: none;
-    padding: 15px 30px;
-    font-size: 18px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.pay-button:hover {
-    background-color: #005959;
-}
-
-/* Moving fishes */
-.fish {
-    position: absolute;
-    width: 60px;
-    height: 30px;
-    background-color: orange;
-    border-radius: 50%;
-    z-index: 0;
-    animation: swim linear infinite;
-}
-
-/* Fish fins (triangles) */
-.fish .fin-left, .fish .fin-right {
-    position: absolute;
-    width: 0;
-    height: 0;
-    top: 7px;
-    border-top: 8px solid transparent;
-    border-bottom: 8px solid transparent;
-}
-
-.fish .fin-left {
-    border-right: 12px solid orange;
-    left: -12px;
-}
-
-.fish .fin-right {
-    border-left: 12px solid orange;
-    right: -12px;
-}
-
-/* Fish eye */
-.fish .eye {
-    position: absolute;
-    width: 6px;
-    height: 6px;
-    background: black;
-    border-radius: 50%;
-    top: 8px;
-    right: 10px;
-}
-
-@keyframes swim {
-    0% { transform: translateX(-80px); }
-    100% { transform: translateX(110vw); }
-}
-
-/* Different fishes speed and top */
-.fish1 { top: 120px; animation-duration: 12s; }
-.fish2 { top: 280px; animation-duration: 18s; }
-.fish3 { top: 420px; animation-duration: 15s; }
-
-/* Contact number in red */
-.contact {
-    text-align: center;
-    font-size: 18px;
-    color: red;
-    padding: 20px 0;
-    position: relative;
-    z-index: 2;
-}
-</style>
+        .contact {
+            text-align: center;
+            margin: 20px;
+            color: red;  /* Contact number in red */
+            font-size: 22px;
+        }
+    </style>
 </head>
+
 <body>
-<h1>Yadav Ro Sales and Services</h1>
 
-<!-- Water splash -->
-<div class="water-splash splash1"></div>
-<div class="water-splash splash2"></div>
-<div class="water-splash splash3"></div>
+<header>Yadav RO Sales & Services</header>
 
-<!-- Moving fishes with fins and eyes -->
-<div class="fish fish1">
-    <div class="fin-left"></div>
-    <div class="fin-right"></div>
-    <div class="eye"></div>
-</div>
-<div class="fish fish2">
-    <div class="fin-left"></div>
-    <div class="fin-right"></div>
-    <div class="eye"></div>
-</div>
-<div class="fish fish3">
-    <div class="fin-left"></div>
-    <div class="fin-right"></div>
-    <div class="eye"></div>
-</div>
-
-<!-- Products -->
 <div class="products">
-    <div class="product">
-        <img src="images/kent_mineral_water.jpg" alt="Kent Mineral Water">
-        <p>Kent Mineral Water</p>
+
+    <!-- Product 1 -->
+    <div class="product-card">
+        <div class="fin"></div>
+        <img src="kent.jpg" alt="Kent Mineral Water">
+        <div class="fin"></div>
+        <h3>Kent Mineral Water</h3>
     </div>
-    <div class="product">
-        <img src="images/copper_power.jpg" alt="Copper Power">
-        <p>Copper Power</p>
+
+    <!-- Product 2 -->
+    <div class="product-card">
+        <div class="fin"></div>
+        <img src="copper.jpg" alt="Copper Power RO">
+        <div class="fin"></div>
+        <h3>Copper Power RO</h3>
     </div>
-    <div class="product">
-        <img src="images/aqua_plus.jpg" alt="Aqua Plus">
-        <p>Aqua Plus</p>
+
+    <!-- Product 3 -->
+    <div class="product-card">
+        <div class="fin"></div>
+        <img src="aqua-plus.jpg" alt="Aqua Plus RO">
+        <div class="fin"></div>
+        <h3>Aqua Plus RO</h3>
     </div>
-    <div class="product">
-        <img src="images/aqua_organica.jpg" alt="Aqua Organica">
-        <p>Aqua Organica</p>
+
+    <!-- Product 4 -->
+    <div class="product-card">
+        <div class="fin"></div>
+        <img src="aqua-organica.jpg" alt="Aqua Organica RO">
+        <div class="fin"></div>
+        <h3>Aqua Organica RO</h3>
     </div>
+
 </div>
 
-<!-- Pay Now -->
-<div class="payment">
-    <button class="pay-button" onclick="window.location.href='upi://pay?pa=7015874559@pthdfc&pn=Yadav+Ro'">Pay Now</button>
-</div>
+<!-- Pay Now button with UPI -->
+<a class="pay-btn" href="upi://pay?pa=rohit.4559@ptyes&pn=Yadav%20RO%20Services&am=1&cu=INR">
+    Pay Now
+</a>
 
-<!-- Contact number -->
 <div class="contact">
-    Contact: 9992859460
+    Contact: 999285604
 </div>
 
 </body>
 </html>
-
-add upi
