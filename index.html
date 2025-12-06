@@ -49,6 +49,21 @@
             padding: 20px;
             color: #555;
         }
+        .upi-payment {
+            margin-top: 15px;
+        }
+        .upi-payment a {
+            display: inline-block;
+            padding: 10px 15px;
+            background: #ff6f00;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .upi-payment a:hover {
+            background: #e65c00;
+        }
     </style>
 </head>
 <body>
@@ -64,6 +79,14 @@
                 <p><strong>Price:</strong> ₹999</p>
                 <p>This is a sample product description. You can replace it with your own text.</p>
                 <button onclick="buyNow()">Buy Now</button>
+
+                <!-- UPI Payment Section -->
+                <div class="upi-payment">
+                    <p><strong>Pay via UPI:</strong></p>
+                    <a href="upi://pay?pa=7015874559@pthdfc&pn=Yadav%20Ro%20Services&am=999&cu=INR" target="_blank">
+                        Pay Now
+                    </a>
+                </div>
             </div>
         </div>
     </div>
@@ -74,7 +97,7 @@
 
     <script>
         function buyNow() {
-            alert("Thank you for your interest! Payment gateway will be added here.");
+            alert("Thank you for your interest! You can also pay via the UPI link below.");
         }
     </script>
 </body>
