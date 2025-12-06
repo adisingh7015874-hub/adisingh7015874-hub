@@ -72,15 +72,23 @@
     .payment {
         text-align: center;
         padding: 30px 20px;
-        background: rgba(0, 128, 128, 0.1);
         position: relative;
         z-index: 1;
     }
 
-    .payment img {
-        margin-top: 15px;
-        width: 200px;
+    .pay-button {
+        background-color: #008080;
+        color: white;
+        border: none;
+        padding: 15px 30px;
+        font-size: 18px;
         border-radius: 8px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .pay-button:hover {
+        background-color: #005959;
     }
 </style>
 </head>
@@ -104,11 +112,9 @@
         </div>
     </div>
 
-    <!-- UPI Payment -->
+    <!-- Pay Now Button -->
     <div class="payment">
-        <h2>Pay via UPI</h2>
-        <img src="images/upi_qr.png" alt="UPI QR Code">
-        <p>UPI ID: 7015874559@pthdfc</p>
+        <button class="pay-button" onclick="window.location.href='upi://pay?pa=7015874559@pthdfc&pn=Yadav+Ro'">Pay Now</button>
     </div>
 </body>
 </html>
