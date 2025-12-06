@@ -1,144 +1,191 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Yadav Ro Sales and Services</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yadav RO Sales & Services</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(white, #e3f2fd);
+        }
+        header {
+            background: #0d47a1;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        .product-card {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+        .product-card img {
+            width: 100%;
+            height: 260px;
+            object-fit: contain;
+        }
+        .product-card button {
+            background: #0d47a1;
+            color: white;
+            padding: 10px;
+            width: 100%;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        .product-card button:hover {
+            background: #08306b;
+        }
+
+        /* Product Detail Pages */
+        .detail-page {
+            padding: 20px;
+        }
+        .detail-page img {
+            width: 100%;
+            max-width: 350px;
+            display: block;
+            margin: auto;
+        }
+        .back-btn {
+            margin-top: 20px;
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background: #0d47a1;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 6px;
+        }
+    </style>
+</head>
+<body>
+<header>Yadav RO Sales & Services</header>
+
+<div class="product-grid">
+    <div class="product-card">
+        <img src="kent.png" alt="Kent Mineral Water">
+        <h3>Kent Mineral Water</h3>
+        <button onclick="location.href='kent.html'">View Product</button>
+    </div>
+
+    <div class="product-card">
+        <img src="copper.png" alt="Copper Power RO">
+        <h3>Copper Power</h3>
+        <button onclick="location.href='copper.html'">View Product</button>
+    </div>
+
+    <div class="product-card">
+        <img src="aquaplus.png" alt="Aqua Plus RO">
+        <h3>Aqua Plus</h3>
+        <button onclick="location.href='aquaplus.html'">View Product</button>
+    </div>
+
+    <div class="product-card">
+        <img src="aquaorganica.png" alt="Aqua Organica RO">
+        <h3>Aqua Organica</h3>
+        <button onclick="location.href='aquaorganica.html'">View Product</button>
+    </div>
+</div>
+
+<!-- Product Pages -->
+
+<!-- kent.html -->
+<!-- Save as kent.html -->
+<!DOCTYPE html>
+<html>
+<head>
+<title>Kent Mineral Water</title>
 <style>
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background: linear-gradient(135deg, #008080 0%, #00b3b3 50%, #ffffff 100%);
-    color: #333;
-    position: relative;
-    overflow-x: hidden;
-}
-
-/* Water splash animation */
-.water-splash {
-    position: absolute;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.25);
-    animation: splash 6s infinite;
-    z-index: 0;
-}
-
-.splash1 { width: 100px; height: 100px; top: 50px; left: 20%; animation-delay: 0s; }
-.splash2 { width: 150px; height: 150px; top: 200px; left: 70%; animation-delay: 2s; }
-.splash3 { width: 80px; height: 80px; top: 400px; left: 40%; animation-delay: 4s; }
-
-@keyframes splash {
-    0% { transform: scale(0) translateY(0); opacity: 0.2; }
-    50% { transform: scale(1.2) translateY(-20px); opacity: 0.4; }
-    100% { transform: scale(0) translateY(0); opacity: 0.2; }
-}
-
-h1 {
-    text-align: center;
-    padding: 20px;
-    background-color: rgba(0, 128, 128, 0.8);
-    color: white;
-    margin: 0;
-    font-size: 28px;
-    position: relative;
-    z-index: 2;
-}
-
-.products {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    padding: 40px 20px;
-    flex-wrap: wrap;
-    position: relative;
-    z-index: 2;
-}
-
-.product {
-    text-align: center;
-    background: rgba(255, 255, 255, 0.85);
-    padding: 15px;
-    border-radius: 12px;
-    box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
-    max-width: 200px;
-}
-
-.product img {
-    width: 100%;
-    border-radius: 8px;
-}
-
-.payment {
-    text-align: center;
-    padding: 30px 20px;
-    position: relative;
-    z-index: 2;
-}
-
-.pay-button {
-    background-color: #008080;
-    color: white;
-    border: none;
-    padding: 15px 30px;
-    font-size: 18px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.pay-button:hover {
-    background-color: #005959;
-}
-
-/* Contact number in red */
-.contact {
-    text-align: center;
-    font-size: 18px;
-    color: red;
-    padding: 20px 0;
-    position: relative;
-    z-index: 2;
-}
+body { font-family: Arial; padding:20px; }
+h2 { color:#0d47a1; }
+.price { color:red; font-size:22px; font-weight:bold; }
+button { background:#0d47a1; color:white; padding:10px; border-radius:6px; border:none; width:100%; }
 </style>
 </head>
 <body>
-<h1>Yadav Ro Sales and Services</h1>
+<h2>Kent Mineral Water</h2>
+<img src="kent.png" style="width:300px; display:block; margin:auto;">
+<p class="price">Price: ₹1000</p>
+<button onclick="location.href='upi://pay?pa=rohit.4559@ptyes&pn=YadavRO&am=1000&cu=INR'">Proceed to Buy</button>
+<!-- aqua pages added -->
 
-<!-- Water splash -->
-<div class="water-splash splash1"></div>
-<div class="water-splash splash2"></div>
-<div class="water-splash splash3"></div>
+<!-- copper.html -->
+<!DOCTYPE html>
+<html>
+<head>
+<title>Copper Power</title>
+<style>
+body { font-family: Arial; padding:20px; }
+h2 { color:#0d47a1; }
+.price { color:red; font-size:22px; font-weight:bold; }
+button { background:#0d47a1; color:white; padding:10px; border-radius:6px; border:none; width:100%; }
+</style>
+</head>
+<body>
+<h2>Copper Power</h2>
+<img src="copper.png" style="width:300px; display:block; margin:auto;">
+<p class="price">Price: ₹1000</p>
+<button onclick="location.href='upi://pay?pa=rohit.4559@ptyes&pn=YadavRO&am=1000&cu=INR'">Proceed to Buy</button>
+</body>
+</html>
 
-<!-- Products -->
-<div class="products">
-    <div class="product">
-        <img src="images/kent_mineral_water.jpg" alt="Kent Mineral Water">
-        <p>Kent Mineral Water</p>
-    </div>
-    <div class="product">
-        <img src="images/copper_power.jpg" alt="Copper Power">
-        <p>Copper Power</p>
-    </div>
-    <div class="product">
-        <img src="images/aqua_plus.jpg" alt="Aqua Plus">
-        <p>Aqua Plus</p>
-    </div>
-    <div class="product">
-        <img src="images/aqua_organica.jpg" alt="Aqua Organica">
-        <p>Aqua Organica</p>
-    </div>
-</div>
+<!-- aquaplus.html -->
+<!DOCTYPE html>
+<html>
+<head>
+<title>Aqua Plus</title>
+<style>
+body { font-family: Arial; padding:20px; }
+h2 { color:#0d47a1; }
+.price { color:red; font-size:22px; font-weight:bold; }
+button { background:#0d47a1; color:white; padding:10px; border-radius:6px; border:none; width:100%; }
+</style>
+</head>
+<body>
+<h2>Aqua Plus</h2>
+<img src="aquaplus.png" style="width:300px; display:block; margin:auto;">
+<p class="price">Price: ₹1000</p>
+<button onclick="location.href='upi://pay?pa=rohit.4559@ptyes&pn=YadavRO&am=1000&cu=INR'">Proceed to Buy</button>
+</body>
+</html>
 
-<!-- Pay Now -->
-<div class="payment">
-    <button class="pay-button" onclick="window.location.href='upi://pay?pa=rohit.4559@ptyes&pn=Yadav+Ro'">Pay Now</button>
-</div>
+<!-- aquaorganica.html -->
+<!DOCTYPE html>
+<html>
+<head>
+<title>Aqua Organica</title>
+<style>
+body { font-family: Arial; padding:20px; }
+h2 { color:#0d47a1; }
+.price { color:red; font-size:22px; font-weight:bold; }
+button { background:#0d47a1; color:white; padding:10px; border-radius:6px; border:none; width:100%; }
+</style>
+</head>
+<body>
+<h2>Aqua Organica</h2>
+<img src="aquaorganica.png" style="width:300px; display:block; margin:auto;">
+<p class="price">Price: ₹1000</p>
+<button onclick="location.href='upi://pay?pa=rohit.4559@ptyes&pn=YadavRO&am=1000&cu=INR'">Proceed to Buy</button>
+</body>
+</html>
 
-<!-- Contact number -->
-<div class="contact">
-    Contact: 9992859460
-</div>
+</body>
+</html>
 
 </body>
 </html>
