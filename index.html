@@ -37,4 +37,134 @@ body {
 h1 {
     text-align: center;
     padding: 20px;
-    background-color: rgba
+    background-color: rgba(0, 128, 128, 0.8);
+    color: white;
+    margin: 0;
+    font-size: 28px;
+    position: relative;
+    z-index: 2;
+}
+
+.products {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 40px 20px;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 2;
+}
+
+.product {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.85);
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+    max-width: 200px;
+}
+
+.product img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.payment {
+    text-align: center;
+    padding: 30px 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.pay-button {
+    background-color: #008080;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.pay-button:hover {
+    background-color: #005959;
+}
+
+/* Simple moving fishes */
+.fish {
+    position: absolute;
+    width: 60px;
+    height: 30px;
+    background-color: orange;
+    border-radius: 50%;
+    z-index: 0;
+    animation: swim linear infinite;
+}
+
+@keyframes swim {
+    0% { transform: translateX(-80px); }
+    100% { transform: translateX(110vw); }
+}
+
+/* Different fishes speed and top */
+.fish1 { top: 120px; animation-duration: 12s; }
+.fish2 { top: 280px; animation-duration: 18s; }
+.fish3 { top: 420px; animation-duration: 15s; }
+
+/* Contact number in red */
+.contact {
+    text-align: center;
+    font-size: 18px;
+    color: red;
+    padding: 20px 0;
+    position: relative;
+    z-index: 2;
+}
+</style>
+</head>
+<body>
+<h1>Yadav Ro Sales and Services</h1>
+
+<!-- Water splash -->
+<div class="water-splash splash1"></div>
+<div class="water-splash splash2"></div>
+<div class="water-splash splash3"></div>
+
+<!-- Moving fishes -->
+<div class="fish fish1"></div>
+<div class="fish fish2"></div>
+<div class="fish fish3"></div>
+
+<!-- Products -->
+<div class="products">
+    <div class="product">
+        <img src="images/kent_mineral_water.jpg" alt="Kent Mineral Water">
+        <p>Kent Mineral Water</p>
+    </div>
+    <div class="product">
+        <img src="images/copper_power.jpg" alt="Copper Power">
+        <p>Copper Power</p>
+    </div>
+    <div class="product">
+        <img src="images/aqua_plus.jpg" alt="Aqua Plus">
+        <p>Aqua Plus</p>
+    </div>
+    <div class="product">
+        <img src="images/aqua_organica.jpg" alt="Aqua Organica">
+        <p>Aqua Organica</p>
+    </div>
+</div>
+
+<!-- Pay Now -->
+<div class="payment">
+    <button class="pay-button" onclick="window.location.href='upi://pay?pa=7015874559@pthdfc&pn=Yadav+Ro'">Pay Now</button>
+</div>
+
+<!-- Contact number -->
+<div class="contact">
+    Contact: 9992859460
+</div>
+
+</body>
+</html>
