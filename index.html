@@ -1,129 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yadav RO Sales and Services</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yadav RO Sales & Service</title>
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(white, #c9eaff);
-        }
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background: white;
+        font-family: Arial;
+        text-align: center;
+    }
 
-        header {
-            background: #0077cc;
-            color: white;
-            padding: 15px;
-            text-align: center;
-            font-size: 24px;
-            font-weight: bold;
-        }
+    h1 {
+        background: #0077cc;
+        color: white;
+        padding: 16px;
+    }
 
-        .products {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            padding: 20px;
-        }
+    .product-box {
+        width: 300px;
+        margin: 25px auto;
+        padding: 15px;
+        border-radius: 12px;
+        background: #f8f8f8;
+        box-shadow: 0 0 8px #ccc;
+    }
+    .product-box img {
+        width: 100%;
+        border-radius: 10px;
+    }
+    .product-box a {
+        text-decoration: none;
+        color: black;
+        font-weight: bold;
+        display: block;
+        margin-top: 10px;
+    }
 
-        .product-card {
-            width: 260px;
-            background: white;
-            margin: 15px;
-            padding: 15px;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0,0,0,0.15);
-            text-align: center;
-        }
-
-        .product-card img {
-            width: 100%;
-            border-radius: 10px;
-        }
-
-        /* FINS changed: now top + bottom ONLY */
-        .fin {
-            width: 120px;
-            height: 20px;
-            background: #0077cc;
-            margin: 10px auto;
-            border-radius: 50px;
-        }
-
-        .pay-btn {
-            display: block;
-            width: 200px;
-            margin: 20px auto;
-            padding: 12px;
-            background: #ff6600;
-            color: white;
-            text-align: center;
-            font-size: 20px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .contact {
-            text-align: center;
-            margin: 20px;
-            color: red;  /* Contact number in red */
-            font-size: 22px;
-        }
-    </style>
+    /* Decorative fins TOP and BOTTOM */
+    .fin-top, .fin-bottom {
+        width: 100%;
+        height: 20px;
+        background: linear-gradient(to right, #00aaff, #0077cc);
+    }
+</style>
 </head>
 
 <body>
 
-<header>Yadav RO Sales & Services</header>
+<h1>📦 Our RO Products</h1>
 
-<div class="products">
+<div class="fin-top"></div>
 
-    <!-- Product 1 -->
-    <div class="product-card">
-        <div class="fin"></div>
-        <img src="kent.jpg" alt="Kent Mineral Water">
-        <div class="fin"></div>
-        <h3>Kent Mineral Water</h3>
-    </div>
-
-    <!-- Product 2 -->
-    <div class="product-card">
-        <div class="fin"></div>
-        <img src="copper.jpg" alt="Copper Power RO">
-        <div class="fin"></div>
-        <h3>Copper Power RO</h3>
-    </div>
-
-    <!-- Product 3 -->
-    <div class="product-card">
-        <div class="fin"></div>
-        <img src="aqua-plus.jpg" alt="Aqua Plus RO">
-        <div class="fin"></div>
-        <h3>Aqua Plus RO</h3>
-    </div>
-
-    <!-- Product 4 -->
-    <div class="product-card">
-        <div class="fin"></div>
-        <img src="aqua-organica.jpg" alt="Aqua Organica RO">
-        <div class="fin"></div>
-        <h3>Aqua Organica RO</h3>
-    </div>
-
+<!-- PRODUCT 1 -->
+<div class="product-box">
+    <a href="kent.html">
+        <img src="kent.jpg">
+        Kent Mineral RO
+    </a>
 </div>
 
-<!-- Pay Now button with UPI -->
-<a class="pay-btn" href="upi://pay?pa=rohit.4559@ptyes&pn=Yadav%20RO%20Services&am=1&cu=INR">
-    Pay Now
-</a>
-
-<div class="contact">
-    Contact: 999285604
+<!-- PRODUCT 2 -->
+<div class="product-box">
+    <a href="copper.html">
+        <img src="copper.jpg">
+        Copper Power RO
+    </a>
 </div>
+
+<!-- PRODUCT 3 -->
+<div class="product-box">
+    <a href="aquaplus.html">
+        <img src="aquaplus.jpg">
+        Aqua Plus RO
+    </a>
+</div>
+
+<!-- PRODUCT 4 -->
+<div class="product-box">
+    <a href="aquaorganica.html">
+        <img src="aquaorganica.jpg">
+        Aqua Organica RO
+    </a>
+</div>
+
+<div class="fin-bottom"></div>
+
+<h2>Contact: <span style="color:red;">7015874559</span></h2>
 
 </body>
 </html>
