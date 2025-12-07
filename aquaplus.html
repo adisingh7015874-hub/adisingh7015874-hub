@@ -20,7 +20,7 @@ h2 {
     color:red; 
     font-size:22px; 
     font-weight:bold; 
-    margin:10px 0; 
+    margin:10px 0 20px 0; 
 }
 img { 
     max-width:350px; 
@@ -29,52 +29,36 @@ img {
     margin-bottom:20px; 
 }
 
-/* BUTTONS */
+/* BUTTON CONTAINER */
 .button-container {
     display: flex;
-    flex-direction: column; /* stack vertically by default */
+    flex-direction: column; /* stack vertically on small screens */
     gap: 10px;
     margin-bottom: 20px;
 }
 
-button { 
-    color:white; 
-    padding:12px; 
-    border-radius:6px; 
-    border:none; 
-    width:100%; 
-    cursor:pointer; 
+.button-container button {
+    padding:12px;
+    border-radius:6px;
+    border:none;
+    cursor:pointer;
     font-size:16px;
+    color:white;
+    width:100%; /* all buttons same width */
 }
 
-.cart-btn {
-    background:#ff6600;   /* ORANGE BUTTON */
-}
+/* Specific button colors */
+.cart-btn { background:#ff6600; }   /* Orange */
+.buy-btn { background:#0d47a1; }    /* Blue */
+.back-btn { background:#08306b; }   /* Dark Blue */
 
-.buy-btn {
-    background:#0d47a1;   /* BLUE BUY BUTTON */
-}
-
-.back-btn { 
-    display:block; 
-    margin-top:20px; 
-    text-decoration:none; 
-    color:white; 
-    background:#08306b; 
-    padding:12px; 
-    border-radius:6px; 
-    width:100%; 
-    text-align:center; 
-    font-size:16px;
-}
-
-/* RESPONSIVE: For larger screens show buttons side by side */
+/* Responsive: On wider screens, show buttons side by side */
 @media (min-width: 600px) {
     .button-container {
         flex-direction: row;
     }
     .button-container button {
-        width: 48%; /* two buttons side by side */
+        width: 32%; /* three equal buttons side by side with small gaps */
     }
 }
 </style>
@@ -88,9 +72,8 @@ button {
 <div class="button-container">
     <button class="cart-btn" onclick="addToCart()">Add to Cart</button>
     <button class="buy-btn" onclick="location.href='upi://pay?pa=rohit.4559@ptyes&pn=YadavRO&am=100&cu=INR'">Proceed to Buy</button>
+    <button class="back-btn" onclick="location.href='index.html'">Back to Products</button>
 </div>
-
-<a href="index.html" class="back-btn">Back to Products</a>
 
 <script>
 function addToCart() {
@@ -108,3 +91,4 @@ function addToCart() {
 
 </body>
 </html>
+``
