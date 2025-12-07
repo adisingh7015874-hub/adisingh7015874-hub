@@ -2,84 +2,81 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Copper Power</title>
 <style>
-body { font-family: Arial; padding:20px; text-align:center; }
-h2 { color:#0d47a1; }
-.price { color:red; font-size:22px; font-weight:bold; margin:10px 0; }
+body { font-family: Arial; padding:20px; text-align:center; margin:0; background:#f5f5f5; }
+h2 { color:#0d47a1; margin-bottom:20px; }
+.price { color:red; font-size:22px; font-weight:bold; margin:10px 0 20px 0; }
+img { max-width:350px; display:block; margin:auto; margin-bottom:20px; }
 
-button {
-    background:#0d47a1;
-    color:white;
-    padding:10px;
+/* BUTTON CONTAINER */
+.button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.button-container button {
+    padding:12px;
     border-radius:6px;
     border:none;
-    width:100%;
     cursor:pointer;
-    margin-top:10px;
-}
-
-.add-cart {
-    background: #ff9800;
-}
-
-.back-btn {
-    display:block;
-    margin-top:20px;
-    text-decoration:none;
-    color:white;
-    background:#08306b;
-    padding:10px;
-    border-radius:6px;
+    font-size:16px;
+    font-weight:bold;
     width:100%;
-    text-align:center;
+    color:white;
 }
 
-img {
-    max-width:350px;
-    display:block;
-    margin:auto;
-    margin-bottom:10px;
+/* BUTTON COLORS */
+.add-cart { background:#ff9800; } /* Orange */
+.buy-btn { background:#0d47a1; }  /* Blue */
+.back-btn { background:#08306b; } /* Dark Blue */
+
+/* RESPONSIVE: side by side on wider screens */
+@media (min-width: 600px) {
+    .button-container {
+        flex-direction: row;
+    }
+    .button-container button {
+        width:32%;
+    }
 }
 </style>
-
-<script>
-function addToCart() {
-    let product = {
-        name: "Copper Power",
-        price: 100,
-        image: "copper.png"
-    };
-
-    // Get existing cart or create new
-    let cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-    // Add new item
-    cart.push(product);
-
-    // Save back
-    localStorage.setItem("cart", JSON.stringify(cart));
-
-    alert("Added to Cart!");
-}
-</script>
-
 </head>
 <body>
 
 <h2>Copper Power</h2>
-
 <img src="copper.png" alt="Copper Power">
-
 <p class="price">Price: ₹100</p>
 
-<button class="add-cart" onclick="addToCart()">Add to Cart</button>
+<div class="button-container">
+    <!-- Add to Cart -->
+    <button class="add-cart" onclick="addToCart()">Add to Cart</button>
 
-<button onclick="location.href='upi://pay?pa=rohit.4559@ptyes&pn=YadavRO&am=100&cu=INR'">
-    Proceed to Buy
-</button>
+    <!-- Proceed to Buy -->
+    <button class="buy-btn" onclick="location.href='upi://pay?pa=rohit.4559@ptyes&pn=YadavRO&am=100&cu=INR'">
+        Proceed to Buy
+    </button>
 
-<a href="index.html" class="back-btn">Back to Products</a>
+    <!-- Back -->
+    <button class="back-btn" onclick="location.href='index.html'">Back to Products</button>
+</div>
+
+<script>
+function addToCart() {
+    const product = {
+        name: "Copper Power",
+        price: 100,
+        image: "copper.png"
+    };
+    let cart = JSON.parse(localStorage.getItem("cart") || "[]");
+    cart.push(product);
+    localStorage.setItem("cart", JSON.stringify(cart));
+    alert(product.name + " added to cart!");
+}
+</script>
 
 </body>
 </html>
