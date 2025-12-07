@@ -1,8 +1,9 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta-name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yadav RO Sales & Services</title>
 
     <style>
@@ -13,38 +14,35 @@
             background: linear-gradient(white, #e3f2fd);
         }
 
-        /* HEADER FIXED */
+        /* HEADER */
         header {
             background: #0d47a1;
             color: white;
-            padding: 20px;
+            padding: 20px 20px;
             font-size: 28px;
             font-weight: bold;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            text-align: center;
             position: relative;
         }
 
-        /* CART BUTTON (TOP RIGHT) */
+        /* CART BUTTON */
         .cart-btn {
             position: absolute;
             right: 20px;
-            top: 18px;
-            font-size: 20px;
+            top: 20px;
+            font-size: 18px;
             background: white;
             color: #0d47a1;
             padding: 8px 15px;
             border-radius: 20px;
+            font-weight: bold;
             text-decoration: none;
             box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-            font-weight: bold;
         }
 
-        /* PRODUCT GRID */
         .product-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
             gap: 20px;
             padding: 20px;
         }
@@ -72,11 +70,11 @@
             border-radius: 6px;
             cursor: pointer;
         }
+
         .product-card button:hover {
             background: #08306b;
         }
 
-        /* THANK YOU BOX */
         .thanks-box {
             font-family: 'Poppins', Arial, sans-serif;
             font-size: 26px;
@@ -86,19 +84,9 @@
             padding: 18px 25px;
             border-radius: 15px;
             text-align: center;
-            margin: 40px auto;
+            margin: 30px auto;
             width: 80%;
             box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-            animation: fadeIn 1.5s ease-in-out;
-        }
-        .thanks-box span {
-            background: -webkit-linear-gradient(#fff, #e3f2fd);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: scale(0.95); }
-            to { opacity: 1; transform: scale(1); }
         }
     </style>
 </head>
@@ -111,5 +99,36 @@
 </header>
 
 <div class="product-grid">
+
     <div class="product-card">
-        <img src="kent.png" alt="Kent Minera
+        <img src="kent.png" alt="Kent Mineral Water">
+        <h3>Kent Mineral Water</h3>
+        <button onclick="location.href='kent.html'">View Product</button>
+    </div>
+
+    <div class="product-card">
+        <img src="copper.png" alt="Copper Power RO">
+        <h3>Copper Power</h3>
+        <button onclick="location.href='copper.html'">View Product</button>
+    </div>
+
+    <div class="product-card">
+        <img src="aquaplus.png" alt="Aqua Plus RO">
+        <h3>Aqua Plus</h3>
+        <button onclick="location.href='aquaplus.html'">View Product</button>
+    </div>
+
+    <div class="product-card">
+        <img src="aquaorganica.png" alt="Aqua Organica RO">
+        <h3>Aqua Organica</h3>
+        <button onclick="location.href='aquaorganica.html'">View Product</button>
+    </div>
+
+</div>
+
+<div class="thanks-box">
+    🌟 Thank You for Visiting! 🌟
+</div>
+
+</body>
+</html>
