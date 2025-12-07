@@ -41,25 +41,8 @@ button {
 
 img { max-width:350px; display:block; margin:auto; margin-bottom:10px; }
 </style>
-
-<script>
-function addToCart() {
-    let product = {
-        name: "Aqua Organica",
-        price: 100,
-        image: "aquaorganica.png"
-    };
-
-    let cart = JSON.parse(localStorage.getItem("cart")) || [];
-    cart.push(product);
-    localStorage.setItem("cart", JSON.stringify(cart));
-
-    alert("Added to Cart!");
-}
-</script>
-
 </head>
 <body>
 
 <h2>Aqua Organica</h2>
-<img src="aquaorga
+<img src="aqu
