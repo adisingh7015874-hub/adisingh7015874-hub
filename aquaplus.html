@@ -43,6 +43,7 @@ img {
     border:none;
     cursor:pointer;
     font-size:16px;
+    font-weight:bold;
     color:white;
     width:100%; /* all buttons same width */
 }
@@ -58,8 +59,22 @@ img {
         flex-direction: row;
     }
     .button-container button {
-        width: 32%; /* three equal buttons side by side with small gaps */
+        width: 32%; /* three equal buttons side by side */
     }
+}
+
+/* Cart Notification */
+#cartNotify {
+    background:#0d47a1; 
+    color:white; 
+    padding:10px 15px; 
+    border-radius:20px; 
+    position: fixed;
+    top:20px; 
+    right:20px; 
+    font-weight:bold; 
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3); 
+    display:none;
 }
 </style>
 </head>
@@ -75,20 +90,36 @@ img {
     <button class="back-btn" onclick="location.href='index.html'">Back to Products</button>
 </div>
 
+<div id="cartNotify">Added to cart! (<span id="cartCount">0</span>)</div>
+
 <script>
+// Update cart counter
+function updateCartCounter() {
+    const cart = JSON.parse(localStorage.getItem("cart") || "[]");
+    document.getElementById("cartCount").innerText = cart.length;
+}
+
+// Add to cart function
 function addToCart() {
     const product = {
         name: "Aqua Plus",
         price: 100,
         image: "aquaplus.png"
     };
-    let cart = JSON.parse(localStorage.getItem("cart") || "[]");
+    const cart = JSON.parse(localStorage.getItem("cart") || "[]");
     cart.push(product);
     localStorage.setItem("cart", JSON.stringify(cart));
-    alert(product.name + " added to cart!");
+    updateCartCounter();
+
+    // Show soft notification
+    const notify = document.getElementById("cartNotify");
+    notify.style.display = "block";
+    setTimeout(() => { notify.style.display = "none"; }, 1500);
 }
+
+// Initialize counter on page load
+updateCartCounter();
 </script>
 
 </body>
 </html>
-``
