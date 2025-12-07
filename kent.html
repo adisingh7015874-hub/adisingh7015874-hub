@@ -51,13 +51,8 @@ function addToCart() {
         image: "kent.png"
     };
 
-    // Get existing cart or create new
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-    // Add product
     cart.push(product);
-
-    // Save updated cart
     localStorage.setItem("cart", JSON.stringify(cart));
 
     alert("Added to Cart!");
@@ -69,4 +64,17 @@ function addToCart() {
 
 <h2>Kent Mineral Water</h2>
 
-<img src="kent.png" alt="Kent Mineral Wate
+<img src="kent.png" alt="Kent Mineral Water">
+
+<p class="price">Price: ₹100</p>
+
+<button class="add-cart" onclick="addToCart()">Add to Cart</button>
+
+<button onclick="location.href='upi://pay?pa=rohit.4559@ptyes&pn=YadavRO&am=100&cu=INR'">
+    Proceed to Buy
+</button>
+
+<a href="index.html" class="back-btn">Back to Products</a>
+
+</body>
+</html>
