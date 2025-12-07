@@ -2,20 +2,49 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Aqua Plus</title>
 <style>
-body { font-family: Arial; padding:20px; text-align:center; }
-h2 { color:#0d47a1; }
-.price { color:red; font-size:22px; font-weight:bold; margin:10px 0; }
+body { 
+    font-family: Arial; 
+    padding:20px; 
+    text-align:center; 
+    margin:0;
+    background: #f5f5f5;
+}
+h2 { 
+    color:#0d47a1; 
+    margin-bottom:20px; 
+}
+.price { 
+    color:red; 
+    font-size:22px; 
+    font-weight:bold; 
+    margin:10px 0; 
+}
+img { 
+    max-width:350px; 
+    display:block; 
+    margin:auto; 
+    margin-bottom:20px; 
+}
+
+/* BUTTONS */
+.button-container {
+    display: flex;
+    flex-direction: column; /* stack vertically by default */
+    gap: 10px;
+    margin-bottom: 20px;
+}
 
 button { 
     color:white; 
-    padding:10px; 
+    padding:12px; 
     border-radius:6px; 
     border:none; 
     width:100%; 
     cursor:pointer; 
-    margin-top:10px; 
+    font-size:16px;
 }
 
 .cart-btn {
@@ -32,13 +61,22 @@ button {
     text-decoration:none; 
     color:white; 
     background:#08306b; 
-    padding:10px; 
+    padding:12px; 
     border-radius:6px; 
     width:100%; 
     text-align:center; 
+    font-size:16px;
 }
 
-img { max-width:350px; display:block; margin:auto; margin-bottom:10px; }
+/* RESPONSIVE: For larger screens show buttons side by side */
+@media (min-width: 600px) {
+    .button-container {
+        flex-direction: row;
+    }
+    .button-container button {
+        width: 48%; /* two buttons side by side */
+    }
+}
 </style>
 </head>
 <body>
@@ -47,11 +85,10 @@ img { max-width:350px; display:block; margin:auto; margin-bottom:10px; }
 <img src="aquaplus.png" alt="Aqua Plus">
 <p class="price">Price: ₹100</p>
 
-<!-- ADD TO CART (orange + above buy) -->
-<button class="cart-btn" onclick="addToCart()">Add to Cart</button>
-
-<!-- PROCEED TO BUY (blue below cart) -->
-<button class="buy-btn" onclick="location.href='upi://pay?pa=rohit.4559@ptyes&pn=YadavRO&am=100&cu=INR'">Proceed to Buy</button>
+<div class="button-container">
+    <button class="cart-btn" onclick="addToCart()">Add to Cart</button>
+    <button class="buy-btn" onclick="location.href='upi://pay?pa=rohit.4559@ptyes&pn=YadavRO&am=100&cu=INR'">Proceed to Buy</button>
+</div>
 
 <a href="index.html" class="back-btn">Back to Products</a>
 
@@ -62,16 +99,9 @@ function addToCart() {
         price: 100,
         image: "aquaplus.png"
     };
-
-    // Get existing cart or create empty array
     let cart = JSON.parse(localStorage.getItem("cart") || "[]");
-
-    // Add product
     cart.push(product);
-
-    // Save cart
     localStorage.setItem("cart", JSON.stringify(cart));
-
     alert(product.name + " added to cart!");
 }
 </script>
