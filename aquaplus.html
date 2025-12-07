@@ -48,12 +48,33 @@ img { max-width:350px; display:block; margin:auto; margin-bottom:10px; }
 <p class="price">Price: ₹100</p>
 
 <!-- ADD TO CART (orange + above buy) -->
-<button class="cart-btn">Add to Cart</button>
+<button class="cart-btn" onclick="addToCart()">Add to Cart</button>
 
 <!-- PROCEED TO BUY (blue below cart) -->
 <button class="buy-btn" onclick="location.href='upi://pay?pa=rohit.4559@ptyes&pn=YadavRO&am=100&cu=INR'">Proceed to Buy</button>
 
 <a href="index.html" class="back-btn">Back to Products</a>
+
+<script>
+function addToCart() {
+    const product = {
+        name: "Aqua Plus",
+        price: 100,
+        image: "aquaplus.png"
+    };
+
+    // Get existing cart or create empty array
+    let cart = JSON.parse(localStorage.getItem("cart") || "[]");
+
+    // Add product
+    cart.push(product);
+
+    // Save cart
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    alert(product.name + " added to cart!");
+}
+</script>
 
 </body>
 </html>
