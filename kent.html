@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -60,7 +60,7 @@ img { max-width:350px; display:block; margin:auto; margin-bottom:20px; }
 <p class="price">Price: ₹100</p>
 
 <div class="button-container">
-    <button class="add-cart" onclick="addToCart()">Add to Cart</button>
+    <button class="add-cart" id="addCartBtn">Add to Cart</button>
     <button class="buy-btn" onclick="location.href='upi://pay?pa=rohit.4559@ptyes&pn=YadavRO&am=100&cu=INR'">Proceed to Buy</button>
     <button class="back-btn" onclick="location.href='index.html'">Back to Products</button>
 </div>
@@ -68,21 +68,36 @@ img { max-width:350px; display:block; margin:auto; margin-bottom:20px; }
 <div id="cartNotify">Added to cart! (<span id="cartCount">0</span>)</div>
 
 <script>
-// Initialize cart count
-function updateCartCounter(){
-    const cart = JSON.parse(localStorage.getItem("cart") || "[]");
+// Update cart count on page load
+function updateCartCounter() {
+    let cart = JSON.parse(localStorage.getItem("cart") || "[]");
     document.getElementById("cartCount").innerText = cart.length;
 }
 
-// Add to cart function
-function addToCart(){
-    const product = { name:"Kent Mineral Water", price:100, image:"kent.png" };
-    let cart = JSON.parse(localStorage.getItem("cart") || "[]");
-    cart.push(product);
-    localStorage.setItem("cart", JSON.stringify(cart));
-    updateCartCounter();
+// Add product to cart
+function addToCart() {
+    try {
+        let product = { name: "Kent Mineral Water", price: 100, image: "kent.png" };
+        let cart = JSON.parse(localStorage.getItem("cart") || "[]");
+        cart.push(product);
+        localStorage.setItem("cart", JSON.stringify(cart));
+        updateCartCounter();
 
-    // Show notification
-    const notify = document.getElementById("cartNotify");
-    notify.style.display = "block";
-    setTimeout(()=>{ notify.style.display = "none"; },1
+        // Show notification
+        let notify = document.getElementById("cartNotify");
+        notify.style.display = "block";
+        setTimeout(() => { notify.style.display = "none"; }, 1500);
+    } catch (err) {
+        console.error("Add to Cart Error:", err);
+    }
+}
+
+// Attach click event
+document.getElementById("addCartBtn").addEventListener("click", addToCart);
+
+// Initialize counter
+updateCartCounter();
+</script>
+
+</body>
+</html>
