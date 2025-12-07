@@ -10,17 +10,79 @@ h2 { color:#0d47a1; margin-bottom:20px; }
 .price { color:red; font-size:22px; font-weight:bold; margin:10px 0 20px 0; }
 img { max-width:350px; display:block; margin:auto; margin-bottom:20px; }
 
-/* BUTTON CONTAINER */
+/* Buttons container */
 .button-container {
-    display: flex;
-    flex-direction: column; /* stacked on mobile */
-    gap: 10px;
-    margin-bottom: 20px;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    margin-bottom:20px;
 }
-
 .button-container button {
     padding:12px;
     border-radius:6px;
     border:none;
     cursor:pointer;
     font-size:16px;
+    font-weight:bold;
+    width:100%;
+    color:white;
+}
+/* Colors */
+.add-cart { background:#ff9800; }
+.buy-btn { background:#0d47a1; }
+.back-btn { background:#08306b; }
+
+/* Responsive for wider screens */
+@media (min-width:600px){
+    .button-container{ flex-direction:row; }
+    .button-container button{ width:32%; }
+}
+
+/* Soft notification */
+#cartNotify {
+    position: fixed;
+    top:20px;
+    right:20px;
+    background:#0d47a1;
+    color:white;
+    padding:10px 15px;
+    border-radius:20px;
+    font-weight:bold;
+    box-shadow:0 2px 6px rgba(0,0,0,0.3);
+    display:none;
+}
+</style>
+</head>
+<body>
+
+<h2>Kent Mineral Water</h2>
+<img src="kent.png" alt="Kent Mineral Water">
+<p class="price">Price: ₹100</p>
+
+<div class="button-container">
+    <button class="add-cart" onclick="addToCart()">Add to Cart</button>
+    <button class="buy-btn" onclick="location.href='upi://pay?pa=rohit.4559@ptyes&pn=YadavRO&am=100&cu=INR'">Proceed to Buy</button>
+    <button class="back-btn" onclick="location.href='index.html'">Back to Products</button>
+</div>
+
+<div id="cartNotify">Added to cart! (<span id="cartCount">0</span>)</div>
+
+<script>
+// Initialize cart count
+function updateCartCounter(){
+    const cart = JSON.parse(localStorage.getItem("cart") || "[]");
+    document.getElementById("cartCount").innerText = cart.length;
+}
+
+// Add to cart function
+function addToCart(){
+    const product = { name:"Kent Mineral Water", price:100, image:"kent.png" };
+    let cart = JSON.parse(localStorage.getItem("cart") || "[]");
+    cart.push(product);
+    localStorage.setItem("cart", JSON.stringify(cart));
+    updateCartCounter();
+
+    // Show notification
+    const notify = document.getElementById("cartNotify");
+    notify.style.display = "block";
+    setTimeout(()=>{ notify.style.display = "none"; },1
