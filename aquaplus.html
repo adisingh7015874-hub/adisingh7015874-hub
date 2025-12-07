@@ -7,8 +7,8 @@
 body { font-family: Arial; padding:20px; text-align:center; }
 h2 { color:#0d47a1; }
 .price { color:red; font-size:22px; font-weight:bold; margin:10px 0; }
+
 button { 
-    background:#0d47a1; 
     color:white; 
     padding:10px; 
     border-radius:6px; 
@@ -17,9 +17,15 @@ button {
     cursor:pointer; 
     margin-top:10px; 
 }
+
 .cart-btn {
-    background:#008000;
+    background:#ff6600;   /* ORANGE BUTTON */
 }
+
+.buy-btn {
+    background:#0d47a1;   /* BLUE BUY BUTTON */
+}
+
 .back-btn { 
     display:block; 
     margin-top:20px; 
@@ -31,6 +37,7 @@ button {
     width:100%; 
     text-align:center; 
 }
+
 img { max-width:350px; display:block; margin:auto; margin-bottom:10px; }
 </style>
 </head>
@@ -40,9 +47,11 @@ img { max-width:350px; display:block; margin:auto; margin-bottom:10px; }
 <img src="aquaplus.png" alt="Aqua Plus">
 <p class="price">Price: ₹100</p>
 
-<button onclick="location.href='upi://pay?pa=rohit.4559@ptyes&pn=YadavRO&am=100&cu=INR'">Proceed to Buy</button>
-
+<!-- ADD TO CART (orange + above buy) -->
 <button class="cart-btn">Add to Cart</button>
+
+<!-- PROCEED TO BUY (blue below cart) -->
+<button class="buy-btn" onclick="location.href='upi://pay?pa=rohit.4559@ptyes&pn=YadavRO&am=100&cu=INR'">Proceed to Buy</button>
 
 <a href="index.html" class="back-btn">Back to Products</a>
 
