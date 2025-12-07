@@ -45,4 +45,38 @@ img { max-width:350px; display:block; margin:auto; margin-bottom:10px; }
 <body>
 
 <h2>Aqua Organica</h2>
-<img src="aqu
+<img src="aquaorganica.png" alt="Aqua Organica">
+
+<p class="price">Price: ₹100</p>
+
+<!-- Add to Cart button -->
+<button class="cart-btn" onclick="addToCart()">Add to Cart</button>
+
+<!-- Proceed to Buy button (dummy link for now) -->
+<button class="buy-btn" onclick="alert('Proceed to buy clicked!')">Proceed to Buy</button>
+
+<a href="index.html" class="back-btn">Back to Products</a>
+
+<script>
+function addToCart() {
+    // Safe localStorage code
+    try {
+        var product = {
+            name: "Aqua Organica",
+            price: 100,
+            image: "aquaorganica.png"
+        };
+
+        var cart = JSON.parse(localStorage.getItem("cart") || "[]");
+        cart.push(product);
+        localStorage.setItem("cart", JSON.stringify(cart));
+
+        alert("Added to Cart!");
+    } catch(e) {
+        alert("Error adding to cart: " + e.message);
+    }
+}
+</script>
+
+</body>
+</html>
