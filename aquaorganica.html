@@ -49,17 +49,16 @@ img { max-width:350px; display:block; margin:auto; margin-bottom:10px; }
 
 <p class="price">Price: ₹100</p>
 
-<!-- Add to Cart button -->
+<!-- Add to Cart button (orange, above buy) -->
 <button class="cart-btn" onclick="addToCart()">Add to Cart</button>
 
-<!-- Proceed to Buy button (dummy link for now) -->
-<button class="buy-btn" onclick="alert('Proceed to buy clicked!')">Proceed to Buy</button>
+<!-- Proceed to Buy button (blue) with UPI -->
+<button class="buy-btn" onclick="location.href='upi://pay?pa=rohit.4559@ptyes&pn=YadavRO&am=100&cu=INR'">Proceed to Buy</button>
 
 <a href="index.html" class="back-btn">Back to Products</a>
 
 <script>
 function addToCart() {
-    // Safe localStorage code
     try {
         var product = {
             name: "Aqua Organica",
