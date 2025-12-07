@@ -2,25 +2,33 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Kent Mineral Water</title>
 <style>
 body { font-family: Arial; padding:20px; text-align:center; }
 h2 { color:#0d47a1; }
 .price { color:red; font-size:22px; font-weight:bold; margin:10px 0; }
 
+/* Buttons */
 button {
-    background:#0d47a1;
-    color:white;
     padding:10px;
     border-radius:6px;
     border:none;
     width:100%;
     cursor:pointer;
     margin-top:10px;
+    font-weight:bold;
+    font-size:16px;
 }
 
 .add-cart {
-    background:#ff9800;
+    background:#ff9800;  /* ORANGE */
+    color:white;
+}
+
+.buy-btn {
+    background:#0d47a1; 
+    color:white;
 }
 
 .back-btn {
@@ -45,17 +53,21 @@ img {
 
 <script>
 function addToCart() {
+    // Product details
     let product = {
         name: "Kent Mineral Water",
         price: 100,
         image: "kent.png"
     };
 
+    // Get existing cart or create new
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
     cart.push(product);
+
+    // Save cart back to localStorage
     localStorage.setItem("cart", JSON.stringify(cart));
 
-    alert("Added to Cart!");
+    alert("Kent Mineral Water added to cart!");
 }
 </script>
 
@@ -68,9 +80,11 @@ function addToCart() {
 
 <p class="price">Price: ₹100</p>
 
+<!-- Add to Cart -->
 <button class="add-cart" onclick="addToCart()">Add to Cart</button>
 
-<button onclick="location.href='upi://pay?pa=rohit.4559@ptyes&pn=YadavRO&am=100&cu=INR'">
+<!-- Proceed to Buy -->
+<button class="buy-btn" onclick="location.href='upi://pay?pa=rohit.4559@ptyes&pn=YadavRO&am=100&cu=INR'">
     Proceed to Buy
 </button>
 
